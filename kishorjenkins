@@ -14,6 +14,18 @@ git branch: 'main', url: 'https://github.com/kishorchukka035/hrmsmaster.git'
                 }
             }
         }
+ stage('Build Docker Image') {
+            steps {
+        dir("/var/lib/jenkins/workspace/python/HRMS-Server") {
+
+                script {
+                    // Build Docker image
+                   
+sh 'docker build -t python .'
+                }
+            }
+        }
+}
 
 }
 }
