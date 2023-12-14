@@ -6,5 +6,14 @@ steps{
 git branch: 'main', url: 'https://github.com/kishorchukka035/hrmsmaster.git'
 }
 }
+ stage('install python depencies') {
+            steps {
+                script {
+                    // Install dependencies using Pipenv
+                    sh 'pipenv install --dev'
+                }
+            }
+        }
+
 }
 }
